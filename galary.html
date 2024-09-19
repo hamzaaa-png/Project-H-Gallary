@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - H Gallery</title>
+    <link rel="stylesheet" href="cssss.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+     /* Gallery Grid */
+.gallery-grid {
+  display: flex;
+  justify-content: center; /* Center the gallery items */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 30px; /* Larger gaps between the gallery items */
+  margin-bottom: 40px;
+}
+
+/* Gallery Item */
+.gallery-item {
+  position: relative;
+  width: 400px; /* Increase size for larger images */
+  height: 400px; /* Square container */
+  border-radius: 20px; /* Softer, larger corners */
+  overflow: hidden;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  justify-content: center; /* Center the image inside */
+  align-items: center; /* Vertically center the image */
+}
+
+.gallery-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styling */
+.image-container img {
+  width: 100%; /* Ensure the image fills the container */
+  height: 100%;
+  object-fit: cover; /* Ensure the image is scaled and cropped appropriately */
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Overlay Effect */
+.image-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* Darker overlay on hover */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .image-container::after {
+  opacity: 1;
+}
+
+/* Text Overlay */
+.gallery-item p {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.gallery-item:hover p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .gallery-item {
+    width: 90vw; /* Take up most of the viewport width */
+    height: 300px; /* Smaller height on mobile */
+  }
+
+  .gallery-item p {
+    font-size: 16px;
+  }
+}
+
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="AnyConv.com__SHRINE_sketch111.png" alt="H Gallery Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link" target="_blank">Home</a></li>
+                <li><a href="galary.html" class="nav-link active" target="_blank">Gallery</a></li>
+                <li><a href="about me.html" class="nav-link" target="_blank">About Me</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="dropdownMenuButton" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Other
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" class="nav-link" href="services.html" target="_blank">Services</a></li>
+                        <li><a class="dropdown-item" class="nav-link" href="contact.html" target="_blank">Contact</a></li>
+                        <li><a class="dropdown-item" class="nav-link" href="testamonial.html" target="_blank">Testimonials</a></li>
+                        <li><a class="dropdown-item" class="nav-link" href="blog.html" target="_blank">Blog</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio">
+        <h1>My Gallery</h1>
+        <p>Explore my best photomanipulation projects. Click on any project to learn more about it.</p>
+
+        <!-- Categories Filter -->
+        <div class="portfolio-categories">
+            <a href="sereal.html" class="category-button" target="_blank">Surreal</a>
+            <a href="realistic.html" class="category-button" target="_blank">Realistic</a>
+            <a href="abstract.html" class="category-button" target="_blank">Abstract</a>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="gallery-grid">
+            <div class="gallery-item" data-category="surreal">
+                <div class="image-container">
+                    <div> <img src="aaa/arggggg1!.jpg" alt="H Gallery Logo"></div>
+                </div>
+                <p>Surreal Project 1</p>
+            </div>
+            <div class="gallery-item" data-category="realistic">
+                <div class="image-container">
+                    <div> <img src="aaa/stary night sky.png" alt="H Gallery Logo"></div>
+                </div>
+                <p>Realistic Project 1</p>
+            </div>
+            <div class="gallery-item" data-category="abstract">
+                <div class="image-container">
+                    <div> <img src="aaa/light check 123.png" alt="H Gallery Logo"></div>
+                </div>
+                <p>Abstract Project 1</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 H Gallery. All rights reserved.</p>
+        <ul class="social-links">
+            <li><a href="https://www.linkedin.com/in/muhammad-hamza-057424293/" target="_blank"><img src="linkedin-112.svg" alt=""></a></li>
+            <li><a href="https://www.instagram.com/muhammadhmza8/" target="_blank"><img src="black-instagram-logo-3497.svg" alt="Instagram"></a></li>
+            <li><a href="https://www.behance.net/muhammadhamza217" target="_blank"><img src="behance-106.svg" alt="Twitter"></a></li>
+        </ul>
+        <a href="contact.html" class="cta-button" target="_blank">Contact Me</a>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
